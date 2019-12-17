@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 #include <stdio.h>
@@ -18,11 +19,12 @@ int main()
 		//--------------------------Crypter--------------------------------
 		if (choix == 1) {
 			cout << "taper votre message:" << endl;
-			cin >> message;
+			cin.ignore();
+			getline(cin, message);
 			cout << "cryptage 1. faible 2.fort" << endl;
 			cin >> choixcryptage;
 			if (choixcryptage == 1) {
-				//--------------------------choixdecryptage faible--------------------------------
+				//--------------------------choix de cryptage faible--------------------------------
 				int key = rand() % 93;
 				for (int i = 0; i < message.size(); i++)
 				{
@@ -51,12 +53,13 @@ int main()
 			cout << "quelle est votre key: " << endl;
 			cin >> key;
 			cout << "quelle est votre message" << endl;
-			cin >> message;
+			cin.ignore();
+			getline(cin, message);
 			if (choixdecryptage == 1){
 				//--------------------------choixdecryptage faible--------------------------------
 				for (int i = 0; i < message.length(); i++)
 				{
-					if (int(message[i]) - int(key) < 33) {
+					if (int(message[i]) - int(key) < 32) {
 						message[i] = int(message[i]) + int(94) - int(key);
 					}
 					else {
