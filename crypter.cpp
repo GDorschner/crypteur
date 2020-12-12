@@ -1,7 +1,5 @@
 #include <iostream>
 #include <string>
-using namespace std;
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -9,24 +7,24 @@ using namespace std;
 #include <vector>
 #include <regex>
 
+using namespace std;
+
 int main()
 {
-	int choix = { 0 }, choixcryptage = { 0 }, choixdecryptage = { 0 };
+	int choice = { 0 }, choicecryptage = { 0 }, choicedecryptage = { 0 };
 	string message;
 	cout << "Hey I'm Your encoder" << endl;
-	while (choix != 3) {
+	while (choice != 3) {
     cout << endl;
-		cout << "1. crypter 2. decrypter 3. exit" << endl;
+		cout << "1.Encrypt 2.Decrypter 3.Exit" << endl;
 		cin >> choix;
-		//--------------------------Crypter--------------------------------
-		if (choix == 1) {
-			cout << "type your message:" << endl;
+		if (choice == 1) {
+			cout << "Type your message:" << endl;
 			cin.ignore();
 			getline(cin, message);
-			cout << "cryptage 1.Weak 2.Strong" << endl;
-			cin >> choixcryptage;
-			if (choixcryptage == 1) {
-				//--------------------------choix de cryptage faible--------------------------------
+			cout << "Encryption 1.Weak 2.Strong" << endl;
+			cin >> choicecryptage;
+			if (choicecryptage == 1) {
 				int key = rand() % 93;
 				for (int i = 0; i < message.size(); i++)
 				{
@@ -41,8 +39,7 @@ int main()
 				cout << endl;
 				cout << "key: " << key << endl;
 			}
-			else if(choixcryptage == 2){
-				//--------------------------choixcryptage fort--------------------------------
+			else if(choicecryptage == 2){
         vector<string> keyTab;
 				for (int i = 0; i < message.size(); i++)
 				{
@@ -66,16 +63,13 @@ int main()
         }
 			}
 		}
-
-		//--------------------------Decrypter--------------------------------
-		else if (choix == 2) {
-			cout << "decryptage 1.Weak 2.Strong" << endl;
-			cin >> choixdecryptage;
+		else if (choice == 2) {
+			cout << "Decryptage 1.Weak 2.Strong" << endl;
+			cin >> choicedecryptage;
 			cout << "Message ? : " << endl;
 			cin.ignore();
 			getline(cin, message);
-			if (choixdecryptage == 1){
-				//--------------------------choixdecryptage faible--------------------------------
+			if (choicedecryptage == 1){
         int key;
         cout << "key ? : " << endl;
         cin >> key;
@@ -91,9 +85,7 @@ int main()
 				}
 				cout << endl;
 			}
-			else if(choixdecryptage == 2){
-				//--------------------------choixdecryptage fort--------------------------------
-				cout << "en developement" << endl;
+			else if(choicedecryptage == 2){
         string key;
         cout << "key ? : " << endl;
         cin >> key;
@@ -124,8 +116,7 @@ int main()
 				cout << endl;
 			}
 		}
-		//--------------------------Leave--------------------------------
-		else if (choix == 3) {
+		else if (choice == 3) {
 			cout << "Bye" << endl;
 		}
 		else {
