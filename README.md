@@ -5,4 +5,4 @@
 It's a litte program which can encrypt your message !
 
 # Try It !!!
-Right here 👉 https://repl.it/@guillaumedorsch/Encryptor
+Right here 👉 https://repl.it/@guillaumedorsch/Encryptor?lite=1&outputonly=1
