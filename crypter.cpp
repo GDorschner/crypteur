@@ -17,7 +17,7 @@ int main()
 	while (choice != 3) {
     cout << endl;
 		cout << "1.Encrypt 2.Decrypter 3.Exit" << endl;
-		cin >> choix;
+		cin >> choice;
 		if (choice == 1) {
 			cout << "Type your message:" << endl;
 			cin.ignore();
